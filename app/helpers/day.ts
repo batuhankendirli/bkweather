@@ -1,5 +1,5 @@
-export const findDay = (day: number) => {
-  let today;
+export const findDay = (day: number): string => {
+  let today: string;
   switch (day) {
     case 0:
       today = 'Pazar';
@@ -24,6 +24,7 @@ export const findDay = (day: number) => {
       break;
 
     default:
+      today = '';
       break;
   }
   return today;
