@@ -68,11 +68,11 @@ const Home = () => {
     <div className="flex flex-col min-h-screen">
       <h1 className="text-5xl font-semibold text-center mb-8">Türkiye - İllere Göre Hava Durumu</h1>
       <div
-        className="sticky top-4 flex p-2 bg-gradient-to-br from-cyan-100 to-cyan-800 rounded-md text-color-tertiary mb-8 self-center shadow-lg"
+        className="sticky top-4 flex p-1 mb-8 bg-gradient-to-br from-color-fourth to-color-fifth rounded-full text-color-tertiary self-center shadow-lg"
         ref={parentRef}
       >
         <div
-          className="selection bg-white rounded-md"
+          className="selection bg-color-tertiary rounded-full"
           style={
             {
               '--left': `${position.left}px`,
@@ -85,15 +85,15 @@ const Home = () => {
 
         <button
           className={`py-2 px-4 font-semibold text-lg relative duration-100 ${
-            !position.left ? 'bg-white rounded-md' : ''
-          } ${activeTab === 'cities' ? 'active text-black' : ''}`}
+            !position.left ? 'bg-color-tertiary rounded-full' : ''
+          } ${activeTab === 'cities' ? 'active text-white' : ''}`}
           onClick={(e) => handleClick(e, 'cities')}
         >
           Şehir Listesi
         </button>
         <button
           className={`py-2 px-4 font-semibold text-lg relative duration-100 ${
-            activeTab === 'map' ? 'active text-black' : ''
+            activeTab === 'map' ? 'active text-white' : ''
           }`}
           onClick={(e) => (handleClick(e, 'map'), setSearch(''), setFilteredCities(cities))}
         >
@@ -101,12 +101,12 @@ const Home = () => {
         </button>
       </div>
       {activeTab === 'cities' ? (
-        <div className="flex self-stretch flex-col gap-4">
-          <div className="self-center w-full sm:w-1/2 bg-gradient-to-br from-slate-700 to-slate-400 rounded-md p-1">
+        <div className="flex self-stretch flex-col gap-6">
+          <div className="self-center w-full sm:w-1/2 bg-gradient-to-br from-color-fourth to-color-fifth rounded-full p-1">
             <input
               type="text"
               placeholder="Şehirlerde ara..."
-              className="bg-slate-800 py-2 px-6 text-lg w-full rounded-md focus:outline-none"
+              className="bg-color-tertiary py-2 px-6 text-lg w-full rounded-full focus:outline-none"
               value={search}
               onChange={(e) => handleSearch(e)}
             />
@@ -117,12 +117,12 @@ const Home = () => {
             ))}
           </div>
           {filteredCities.length < 1 ? (
-            <div className="flex flex-col items-center w-full bg-red-400 py-6 gap-4">
-              <p className="text-color-tertiary font-medium text-xl text-center">
+            <div className="flex flex-col items-center w-full bg-red-400 py-6 gap-4 rounded-xl">
+              <p className="text-white font-medium text-xl text-center">
                 Aradığınız kriteri sağlayan bir şehir bulunamadı.
               </p>
               <button
-                className="bg-color-tertiary text-color-fifth text-lg font-medium rounded-full px-8 py-3 shadow-lg duration-300 hover:scale-[1.03] hover:shadow-xl  active:scale-100 active:shadow-md"
+                className="bg-color-tertiary text-white text-lg font-medium rounded-full px-8 py-3 shadow-lg duration-300 hover:scale-[1.03] hover:shadow-xl  active:scale-100 active:shadow-md"
                 onClick={() => (setSearch(''), setFilteredCities(cities))}
               >
                 Filtreyi sıfırla
@@ -135,7 +135,7 @@ const Home = () => {
           <div className="flex-1">
             <TurkeyMap
               hoverable
-              customStyle={{ idleColor: '#888', hoverColor: '#0083b0' }}
+              customStyle={{ idleColor: '#888', hoverColor: '#bbd7ec' }}
               showTooltip
               onClick={(city) => handleMapClick(city)}
             />
