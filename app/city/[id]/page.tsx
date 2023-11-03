@@ -27,8 +27,6 @@ const CityDetail = ({ params }: Params) => {
     getData();
   }, []);
 
-  console.log(cityData);
-
   return (
     <div>
       <h1 className="text-2xl font-bold text-white">{params.id}</h1>

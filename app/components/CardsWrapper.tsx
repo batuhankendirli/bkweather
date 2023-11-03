@@ -22,7 +22,7 @@ const CardsWrapper = ({ data }: { data: WeatherData }) => {
 
   return (
     <div className="flex gap-3">
-      {Array.from({ length: 6 }).map((_, index) => (
+      {data.map((_, index) => (
         <WeatherCard
           key={index}
           firstDay={index === 0}
