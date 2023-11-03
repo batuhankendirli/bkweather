@@ -2,22 +2,21 @@
 
 import cities from '../../data/cities.json';
 import getWeatherData from '@/app/helpers/getWeatherData';
-import WeatherCard from '@/app/components/WeatherCard';
 import { useEffect, useState } from 'react';
 import CardsWrapper from '@/app/components/CardsWrapper';
+import Nav from '@/app/components/Nav';
 
 interface Params {
-  params: { id: string };
+  params: { id: number };
 }
 
 const CityDetail = ({ params }: Params) => {
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [cityData, setCityData] = useState<WeatherData>();
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const { latitude, longitude } = cities[Number(params.id) - 1];
+        const { latitude, longitude } = cities[params.id - 1];
         const data = await getWeatherData(latitude, longitude);
         setCityData(data);
       } catch (error) {
@@ -29,7 +28,7 @@ const CityDetail = ({ params }: Params) => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-white">{params.id}</h1>
+      <Nav />
       {cityData && <CardsWrapper data={cityData} />}
     </div>
   );

@@ -14,6 +14,7 @@
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^4.11.0",
     "turkey-map-react": "^1.2.1",
     "weather-react-icons": "^4.0.2"
   },

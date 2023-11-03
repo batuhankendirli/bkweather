@@ -21,7 +21,7 @@ const CardsWrapper = ({ data }: { data: WeatherData }) => {
   );
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 pt-4">
       {data.map((_, index) => (
         <WeatherCard
           key={index}

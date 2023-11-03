@@ -41,7 +41,7 @@ const WeatherCard = ({
         {day}
       </p>
       <div
-        className={`flex-1 rounded-b-3xl p-6 duration-300 ${
+        className={`flex-1 rounded-b-3xl p-6 duration-300 -z-[2] ${
           isActive ? ' bg-color-fourth' : 'bg-color-tertiary'
         } flex flex-col w-full`}
       >
