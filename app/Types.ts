@@ -57,4 +57,8 @@ type WeatherData = {
   humidity: number[];
   wind: number[];
   status: { description: string; id: number }[];
+  sun: {
+    sunrise: string;
+    sunset: string;
+  };
 }[];

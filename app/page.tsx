@@ -54,7 +54,6 @@ const Home = () => {
       height,
     });
   };
-  console.log(position);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);

@@ -3,7 +3,9 @@ import { findDay } from './day';
 import { toUpper } from './toUpper';
 
 const getWeatherData = async (lat: string, lon: string): Promise<WeatherData> => {
-  const res = await fetch(`${process.env.WEATHER_LINK}forecast?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_API_KEY}&units=metric&lang=tr`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_WEATHER_LINK}forecast?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&units=metric&lang=tr`
+  );
   const data: WeatherResponse = await res.json();
 
   const dates: number[] = [];
@@ -62,6 +64,16 @@ const getWeatherData = async (lat: string, lon: string): Promise<WeatherData> =>
       humidity: humidity[index],
       wind: wind[index],
       status: status[index],
+      sun: {
+        sunrise: dayjs
+          .unix(data.city.sunrise)
+          .toDate()
+          .toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
+        sunset: dayjs
+          .unix(data.city.sunset)
+          .toDate()
+          .toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
+      },
     });
   });
 
