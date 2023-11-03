@@ -28,7 +28,7 @@ const WeatherCard = ({
 }: CardType) => {
   return (
     <button
-      className={`flex w-40 flex-col duration-300 ${
+      className={`flex w-40 flex-col duration-200 ${
         isActive ? 'flex-1 text-black' : 'text-white bg-color-tertiary rounded-3xl'
       }`}
       onClick={onClick}
@@ -36,12 +36,12 @@ const WeatherCard = ({
       <p
         className={`${
           isActive ? 'bg-color-fifth' : 'bg-color-tertiary card-after'
-        } duration-300 p-2 rounded-t-3xl w-full text-xl font-medium`}
+        } duration-200 p-2 rounded-t-3xl w-full text-xl font-medium`}
       >
         {day}
       </p>
       <div
-        className={`flex-1 rounded-b-3xl p-6 duration-300 -z-[2] ${
+        className={`flex-1 rounded-b-3xl p-6 duration-200 -z-[2] ${
           isActive ? ' bg-color-fourth' : 'bg-color-tertiary'
         } flex flex-col w-full`}
       >
