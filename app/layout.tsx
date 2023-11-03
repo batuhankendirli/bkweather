@@ -15,7 +15,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <div className="flex flex-col justify-between bg-slate-800 rounded-md p-8 max-w-[80rem] min-h-screen mx-auto my-[4vw] sm:p-12">
+          {children}
+          <footer>Batuhan Kendirli</footer>
+        </div>
+      </body>
     </html>
   );
 }
