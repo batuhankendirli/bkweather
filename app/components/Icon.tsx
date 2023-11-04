@@ -26,7 +26,7 @@ const Icon = ({ id }: { id: number }) => (
         ? 'text-gray-600'
         : id === 501
         ? 'text-blue-400'
-        : ''
+        : 'text-white'
     }`}
   />
 );

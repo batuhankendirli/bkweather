@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Poppins, Inter_Tight } from 'next/font/google';
+import { ContextProvider } from './Context';
 import './globals.css';
 
 const poppins = Poppins({
@@ -24,10 +25,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${poppins.className} ${inter.variable} bg-color-primary`}>
-        <div className="flex flex-col justify-between bg-color-secondary rounded-[2rem] p-8 max-w-[80rem] min-h-screen mx-auto my-[4vw] sm:p-12">
-          {children}
-          <footer>Batuhan Kendirli</footer>
-        </div>
+        <ContextProvider>
+          <div className="flex flex-col justify-between bg-color-secondary rounded-[2rem] p-8 max-w-[80rem] min-h-screen mx-auto my-[4vw] sm:p-12">
+            {children}
+            <footer>Batuhan Kendirli</footer>
+          </div>
+        </ContextProvider>
       </body>
     </html>
   );

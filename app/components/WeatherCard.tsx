@@ -28,8 +28,10 @@ const WeatherCard = ({
 }: CardType) => {
   return (
     <button
-      className={`flex w-40 flex-col duration-200 ${
-        isActive ? 'flex-1 text-black' : 'text-white bg-color-tertiary rounded-3xl'
+      className={`flex w-40 flex-col border-[3px] duration-200 ${
+        isActive
+          ? 'flex-1 text-black border-transparent'
+          : 'text-white bg-color-tertiary rounded-3xl border-color-primary'
       }`}
       onClick={onClick}
     >

@@ -1,10 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import WeatherCard from './WeatherCard';
+import { Context } from '../Context';
 
 const CardsWrapper = ({ data }: { data: WeatherData }) => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const { setSelectedDay, setActive } = useContext(Context) || {
+    setSelectedDay: () => {},
+    setActive: () => {},
+  };
 
   const feelsLike = data.map((item) =>
     Math.round(item.feelsLike.reduce((acc, curr) => acc + curr, 0) / item.feelsLike.length)
@@ -20,14 +25,20 @@ const CardsWrapper = ({ data }: { data: WeatherData }) => {
     Math.round(item.tempature.reduce((acc, curr) => acc + curr, 0) / item.tempature.length)
   );
 
+  const handleClick = (cardIndex: number) => {
+    setActiveCardIndex(cardIndex);
+    setSelectedDay(cardIndex);
+    setActive({ path: 0, point: 0 });
+  };
+
   return (
-    <div className="flex gap-3 pt-4">
+    <div className="flex gap-3 pt-4 mb-8">
       {data.map((_, index) => (
         <WeatherCard
           key={index}
           firstDay={index === 0}
           isActive={index === activeCardIndex}
-          onClick={() => setActiveCardIndex(index)}
+          onClick={() => handleClick(index)}
           feelsLike={feelsLike[index]}
           humidity={humidity[index]}
           wind={wind[index]}

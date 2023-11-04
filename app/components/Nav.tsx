@@ -1,22 +1,35 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import cities from '../data/cities.json';
 import { useParams, useRouter } from 'next/navigation';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import Link from 'next/link';
+import { Context } from '../Context';
 
 const Nav = () => {
   const { id } = useParams();
   const { replace } = useRouter();
+  const { setSelectedDay, setSelectedCondition, setActive } = useContext(Context) || {
+    setSelectedDay: () => {},
+    setSelectedCondition: () => {},
+    setActive: () => {},
+  };
+
+  const reset = () => {
+    setSelectedDay(0);
+    setSelectedCondition('tempature');
+    setActive({ path: 0, point: 0 });
+  };
 
   const handleChange = (cityId: number) => {
     replace(String(cityId));
+    reset();
   };
 
   return (
     <nav className="flex justify-between items-center mb-4 py-4 border-b-2 border-[#333]">
-      <Link href={'/'} className="flex gap-2 items-center group">
+      <Link href={'/'} onClick={reset} className="flex gap-2 items-center group">
         <AiOutlineArrowLeft className="text-lg group-hover:-translate-x-1 sm:text-2xl duration-300 will-change-transform" />
         <p className="text-lg border-b-2 border-white border-opacity-0 duration-300 group-hover:border-opacity-100">
           Geri Dön

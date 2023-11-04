@@ -16,7 +16,8 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "turkey-map-react": "^1.2.1",
-    "weather-react-icons": "^4.0.2"
+    "weather-react-icons": "^4.0.2",
+    "webrix": "^1.5.13"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -4,7 +4,10 @@ import { toUpper } from './toUpper';
 
 const getWeatherData = async (lat: string, lon: string): Promise<WeatherData> => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_WEATHER_LINK}forecast?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&units=metric&lang=tr`
+    `${process.env.WEATHER_LINK}forecast?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_API_KEY}&units=metric&lang=tr`,
+    {
+      cache: 'no-store',
+    }
   );
   const data: WeatherResponse = await res.json();
 

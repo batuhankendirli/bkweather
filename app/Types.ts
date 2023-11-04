@@ -62,3 +62,17 @@ type WeatherData = {
     sunset: string;
   };
 }[];
+
+type Position = {
+  left: number | null;
+  top: number | null;
+  width: number | null;
+  height: number | null;
+};
+
+type ActiveType = {
+  path: number;
+  point: number;
+};
+
+type ConditionType = 'tempature' | 'wind' | 'humidity' | 'feelsLike';

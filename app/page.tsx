@@ -8,13 +8,6 @@ import { useRouter } from 'next/navigation';
 
 type Tabs = 'cities' | 'map';
 
-type Position = {
-  left: number | null;
-  top: number | null;
-  width: number | null;
-  height: number | null;
-};
-
 const Home = () => {
   const [activeTab, setActiveTab] = useState<Tabs>('cities');
   const [search, setSearch] = useState('');

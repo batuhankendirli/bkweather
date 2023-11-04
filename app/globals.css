@@ -15,8 +15,30 @@ body {
   transition: all 0.2s;
 }
 
+.condition-selection {
+  position: absolute;
+  left: var(--l);
+  width: var(--w);
+  height: 3px;
+  bottom: -1px;
+  transition: all 0.3s;
+}
+
 button {
   z-index: 1;
+}
+
+.backup {
+  position: relative;
+}
+.backup::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  bottom: -1px;
+  width: 100%;
+  background-color: #bbd7ec;
+  left: 0;
 }
 
 ::-webkit-scrollbar {
@@ -63,4 +85,102 @@ button {
   transform: translate(-50%, -50%);
   z-index: -1;
   transition: all 0.3s;
+}
+
+/* GRAPH STYLING */
+.graph {
+  position: relative;
+  height: 20rem;
+  border-radius: 10px;
+}
+
+.labels {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+.labels div {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, 0);
+}
+
+.points {
+  position: absolute;
+  top: 0;
+}
+
+.points div {
+  --size: 3rem;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  top: var(--y);
+  left: var(--x);
+  transform: translate(calc(-0.5 * var(--size)), calc(-0.5 * var(--size)));
+}
+
+.points div p {
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.marker {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.marker .circle {
+  position: absolute;
+  top: 0;
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 1rem;
+  background-color: white;
+  transform: translateY(-50%);
+  box-shadow: 0 1px 5px rgb(0 0 0 / 10%), 0 2px 15px rgb(0 0 0 / 10%);
+}
+
+.marker .line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #d6d6d6;
+}
+
+.graph svg {
+  width: 100%;
+  height: 100%;
+  transform: scaleY(-1);
+}
+
+.graph svg path {
+  vector-effect: non-scaling-stroke;
+}
+
+svg .stroke {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.15rem;
+  pointer-events: none;
+}
+
+svg .gradient {
+  pointer-events: none;
+  color: #f0e054;
 }
