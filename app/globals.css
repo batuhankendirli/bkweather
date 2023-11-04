@@ -184,3 +184,24 @@ svg .gradient {
   pointer-events: none;
   color: #f0e054;
 }
+
+/* FOOTER */
+.footer-link {
+  position: relative;
+  transition: all 0.2s ease-in;
+}
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  background-color: #bbd7ec;
+  transition: all 0.2s ease-in;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
