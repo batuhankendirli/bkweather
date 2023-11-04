@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins, Inter_Tight } from 'next/font/google';
 import { ContextProvider } from './Context';
 import './globals.css';
+import Footer from './components/Footer';
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -26,9 +27,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${poppins.className} ${inter.variable} bg-color-primary`}>
         <ContextProvider>
-          <div className="flex flex-col justify-between bg-color-secondary rounded-[2rem] p-8 max-w-[80rem] min-h-screen mx-auto my-[4vw] sm:p-12">
+          <div className="flex flex-col justify-between bg-color-secondary p-8 min-h-screen xl:rounded-[2rem] xl:my-[4vw] sm:max-w-[80rem] sm:mx-auto sm:p-12">
             {children}
-            <footer>Batuhan Kendirli</footer>
+            <Footer />
           </div>
         </ContextProvider>
       </body>
