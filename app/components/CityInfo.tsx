@@ -20,12 +20,12 @@ const CityInfo = ({ data }: { data: WeatherData }) => {
 
   return (
     <div className="flex justify-between items-center mb-2">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <Icon id={iconId} />
-        <p className="text-4xl font-semibold font-inter">{tempature}</p>
+        <p className="text-3xl font-semibold font-inter sm:text-4xl">{tempature}</p>
       </div>
       <div className="text-right text-sm font-medium text-white sm:text-base">
-        <p className="text-2xl font-bold sm:text-3xl">{cityName}</p>
+        <p className="text-xl font-bold sm:text-3xl">{cityName}</p>
         <p className="text-color-fourth">
           {day} - <span className="font-inter">{styledHour}</span>
         </p>

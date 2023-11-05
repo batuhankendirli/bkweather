@@ -31,7 +31,7 @@ const Graph = ({ data }: GraphProps) => {
   const range = [0, maxLimit];
 
   return (
-    <>
+    <div className="px-6 sm:px-0">
       <div className="graph mb-32" ref={graph}>
         <Marker
           colors={[graphColor]}
@@ -70,7 +70,7 @@ const Graph = ({ data }: GraphProps) => {
           range={range}
         />
       </div>
-    </>
+    </div>
   );
 };
 

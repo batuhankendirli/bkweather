@@ -47,7 +47,10 @@ const Conditions = () => {
   };
 
   return (
-    <div ref={parentRef} className="relative flex gap-2 sm:gap-4 text-lg mb-12">
+    <div
+      ref={parentRef}
+      className="relative flex gap-2 mb-12 text-base overflow-y-hidden overflow-x-auto scroll-mt-10 sm:text-lg sm:gap-4 condition-scroll"
+    >
       <div
         className="condition-selection bg-color-fourth"
         style={

@@ -20,7 +20,7 @@ body {
   left: var(--l);
   width: var(--w);
   height: 3px;
-  bottom: -1px;
+  bottom: 1px;
   transition: all 0.3s;
 }
 
@@ -35,7 +35,7 @@ button {
   content: '';
   position: absolute;
   height: 3px;
-  bottom: -1px;
+  bottom: 1px;
   width: 100%;
   background-color: #bbd7ec;
   left: 0;
@@ -54,6 +54,24 @@ button {
   border-radius: 10px;
 }
 
+/* WeatherCard wrapper scroll */
+.wrapper-scroll {
+  scrollbar-gutter: stable;
+}
+
+.wrapper-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Condition scroll */
+.condition-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.condition-scroll::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
 .card-after {
   position: relative;
 }
@@ -67,24 +85,6 @@ button {
   left: 50%;
   transform: translateX(-50%);
   background-color: #333;
-}
-
-.icon-shadow {
-  position: relative;
-}
-
-.icon-shadow::after {
-  content: '';
-  width: 5.2rem;
-  height: 5.2rem;
-  border-radius: 1.5rem;
-  background-color: rgba(16, 15, 20, 0.75);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  transition: all 0.3s;
 }
 
 /* GRAPH STYLING */

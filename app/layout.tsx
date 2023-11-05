@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${poppins.className} ${inter.variable} bg-color-primary`}>
         <ContextProvider>
-          <div className="flex flex-col justify-between bg-color-secondary p-8 min-h-screen xl:rounded-[2rem] xl:my-[4vw] sm:max-w-[80rem] sm:mx-auto sm:p-12">
+          <div className="flex flex-col justify-between bg-color-secondary p-4 min-h-screen overflow-x-hidden xl:rounded-[2rem] xl:my-[4vw] sm:max-w-[80rem] sm:mx-auto sm:p-12">
             {children}
             <Footer />
           </div>

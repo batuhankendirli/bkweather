@@ -7,7 +7,7 @@ const Icon = ({ id }: { id: number }) => (
   <WeatherIcon
     name="owm"
     iconId={id}
-    className={`text-5xl icon-shadow ${
+    className={`text-5xl ${
       id === 800
         ? 'text-yellow-400'
         : id === 500

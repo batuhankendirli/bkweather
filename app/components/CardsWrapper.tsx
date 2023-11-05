@@ -32,7 +32,7 @@ const CardsWrapper = ({ data }: { data: WeatherData }) => {
   };
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 overflow-x-auto pb-2 wrapper-scroll">
       {data.map((_, index) => (
         <WeatherCard
           key={index}

@@ -28,10 +28,10 @@ const WeatherCard = ({
 }: CardType) => {
   return (
     <button
-      className={`flex w-40 flex-col border-[3px] duration-200 ${
+      className={`flex flex-col h-60 border-[3px] transition-all duration-200 ${
         isActive
-          ? 'flex-1 text-black border-transparent'
-          : 'text-white bg-color-tertiary rounded-3xl border-color-primary'
+          ? 'text-black border-transparent w-[20rem]'
+          : 'text-white bg-color-tertiary rounded-3xl border-color-primary w-[10rem] min-w-[10rem]'
       }`}
       onClick={onClick}
     >
@@ -43,16 +43,26 @@ const WeatherCard = ({
         {day}
       </p>
       <div
-        className={`flex-1 rounded-b-3xl p-6 duration-200 -z-[2] ${
-          isActive ? ' bg-color-fourth' : 'bg-color-tertiary'
-        } flex flex-col w-full`}
+        className={`flex-1 rounded-b-3xl p-3 duration-200 -z-[2] ${
+          isActive ? ' bg-color-fourth' : 'bg-color-tertiary justify-center'
+        } flex w-full ${firstDay ? 'flex-row gap-3 justify-around' : 'flex-col gap-2'}`}
       >
-        <div className={`flex flex-1 ${isActive ? 'mb-3' : 'flex-col-reverse'} justify-between`}>
+        <div
+          className={`flex gap-3 items-center ${
+            isActive && !firstDay ? 'justify-between gap-8' : 'flex-col-reverse self-center'
+          } ${firstDay ? 'flex-col-reverse justify-center' : ''}`}
+        >
           <h2 className={`font-medium text-5xl font-inter`}>{tempature}°</h2>
-          <Icon id={icon} />
+          <div className="flex items-center justify-center w-20 h-20 rounded-3xl bg-[#100f14] bg-opacity-75">
+            <Icon id={icon} />
+          </div>
         </div>
 
-        <div className={`flex justify-between text-left ${isActive ? 'visible' : 'hidden'}`}>
+        <div
+          className={`flex text-left ${isActive ? 'visible' : 'hidden'} ${
+            firstDay ? 'flex-col justify-evenly' : 'justify-between gap-2'
+          }`}
+        >
           <div className="truncate">
             <p className="text-sm">
               Hissedilen: <span className="text-base font-medium font-inter">{feelsLike}°</span>
@@ -64,6 +74,7 @@ const WeatherCard = ({
               Nem: <span className="text-base font-medium font-inter">%{humidity}</span>
             </p>
           </div>
+          {firstDay && <hr className="bg-[#333] bg-opacity-10 rounded-full border-none h-[2px] " />}
           {firstDay && (
             <div className="text-left self-end truncate">
               <p className="text-sm">
