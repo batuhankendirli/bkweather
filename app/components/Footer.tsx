@@ -6,7 +6,7 @@ const Footer = () => {
       <a href="https://batuhankendirli.netlify.app/" target={'_blank'} className="text-lg font-medium footer-link">
         Batuhan Kendirli
       </a>
-      <span>- {year}</span>
+      <span className="font-inter">- {year}</span>
     </footer>
   );
 };

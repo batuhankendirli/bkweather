@@ -4,6 +4,7 @@ import CardsWrapper from '@/app/components/CardsWrapper';
 import Nav from '@/app/components/Nav';
 import Graph from '@/app/components/Graph';
 import Conditions from '@/app/components/Conditions';
+import CityInfo from '@/app/components/CityInfo';
 
 interface Params {
   params: { id: number };
@@ -16,9 +17,10 @@ const CityDetail = async ({ params }: Params) => {
   return (
     <div>
       <Nav />
-      <CardsWrapper data={cityData} />
+      <CityInfo data={cityData} />
       <Conditions />
       <Graph data={cityData} />
+      <CardsWrapper data={cityData} />
     </div>
   );
 };

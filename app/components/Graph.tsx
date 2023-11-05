@@ -55,7 +55,7 @@ const Graph = ({ data }: GraphProps) => {
                   '--y': `0px`,
                 } as CSSProperties
               }
-              className="text-white font-medium text-sm"
+              className="text-white text-sm font-medium font-inter"
             >
               {String(label).length !== 2 ? '0' + label : label}
               <span className="hidden sm:inline">:00</span>

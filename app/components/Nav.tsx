@@ -10,16 +10,18 @@ import { Context } from '../Context';
 const Nav = () => {
   const { id } = useParams();
   const { replace } = useRouter();
-  const { setSelectedDay, setSelectedCondition, setActive } = useContext(Context) || {
+  const { setSelectedDay, setSelectedCondition, setActive, setGraphColor } = useContext(Context) || {
     setSelectedDay: () => {},
     setSelectedCondition: () => {},
     setActive: () => {},
+    setGraphColor: () => {},
   };
 
   const reset = () => {
     setSelectedDay(0);
     setSelectedCondition('tempature');
     setActive({ path: 0, point: 0 });
+    setGraphColor('#f7d500');
   };
 
   const handleChange = (cityId: number) => {
