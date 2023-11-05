@@ -66,7 +66,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-full">
       <h1 className="text-5xl font-semibold text-center mb-8">Türkiye - İllere Göre Hava Durumu</h1>
       <div
         className="sticky top-4 flex p-1 mb-8 bg-gradient-to-br from-color-fourth to-color-fifth rounded-full text-color-tertiary self-center shadow-xl"
