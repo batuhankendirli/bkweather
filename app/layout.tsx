@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Poppins, Inter_Tight } from 'next/font/google';
 import { ContextProvider } from './Context';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import './globals.css';
 import Footer from './components/Footer';
 
@@ -27,10 +29,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${poppins.className} ${inter.variable} bg-color-primary`}>
         <ContextProvider>
-          <div className="flex flex-col justify-between bg-color-secondary p-4 min-h-screen overflow-x-hidden xl:rounded-[2rem] xl:my-[4vw] sm:max-w-[80rem] sm:mx-auto sm:p-12">
-            {children}
-            <Footer />
-          </div>
+          <SkeletonTheme baseColor="#222222" highlightColor="#292929">
+            <div className="flex flex-col justify-between bg-color-secondary p-4 min-h-screen overflow-x-hidden xl:rounded-[2rem] xl:my-[4vw] sm:max-w-[80rem] sm:mx-auto sm:p-12">
+              {children}
+              <Footer />
+            </div>
+          </SkeletonTheme>
         </ContextProvider>
       </body>
     </html>
