@@ -5,6 +5,7 @@ import cities from './data/cities.json';
 import City from './components/City';
 import TurkeyMap, { CityType } from 'turkey-map-react';
 import { useRouter } from 'next/navigation';
+import { remove } from 'remove-accents';
 
 type Tabs = 'cities' | 'map';
 
@@ -49,8 +50,15 @@ const Home = () => {
   };
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    const searchInput = remove(e.target.value).toLowerCase();
     setSearch(e.target.value);
-    setFilteredCities(cities.filter((city) => city.name.toLowerCase().includes(e.target.value.toLowerCase())));
+    setFilteredCities(
+      cities.filter((city) => {
+        const cityNameNormalized = remove(city.name).toLowerCase();
+        const plateNumber = city.id.toString();
+        return cityNameNormalized.includes(searchInput) || plateNumber.includes(searchInput);
+      })
+    );
   };
 
   const handleMapClick = (city: CityType) => {
