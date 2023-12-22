@@ -7,13 +7,13 @@ Built with Next.js, Tailwind CSS, and OpenWeatherMap API. Provides fast and accu
 1. Clone the project
 
    ```sh
-   git clone https://github.com/batuhankendirli/weather-app-case.git
+   git clone https://github.com/batuhankendirli/bkweather.git
    ```
 
 2. Go to the project directory
 
    ```sh
-   cd weather-app-case
+   cd bkweather
    ```
 
 3. Install dependencies
