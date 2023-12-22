@@ -1,4 +1,4 @@
-# Weather App
+# BKWeather
 
 Built with Next.js, Tailwind CSS, and OpenWeatherMap API. Provides fast and accurate weather information for cities of Turkey.
 
@@ -62,7 +62,7 @@ To run this project, you will need to add the following environment variables to
 
 ## 🔴 Demo
 
-You can find the live version [here](https://weather-app-case.vercel.app/).
+You can find the live version [here](https://bkweather.vercel.app/).
 
 ![weather-app](https://github.com/batuhankendirli/weather-app-case/assets/76517857/e71b2c5f-7614-425f-ab04-63f27bd65e8d)
 
