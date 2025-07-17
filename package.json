@@ -1,7 +1,10 @@
 {
-  "name": "patrion-case",
+  "name": "bkweather",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "npm run open-browser && next dev",
     "open-browser": "start http://localhost:3000",
