@@ -1,6 +1,13 @@
 'use client';
 
-import { CSSProperties, ChangeEvent, MouseEvent, useEffect, useRef, useState } from 'react';
+import {
+  CSSProperties,
+  ChangeEvent,
+  MouseEvent,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import cities from './data/cities.json';
 import City from './components/City';
 import TurkeyMap, { CityType } from 'turkey-map-react';
@@ -56,7 +63,10 @@ const Home = () => {
       cities.filter((city) => {
         const cityNameNormalized = remove(city.name).toLowerCase();
         const plateNumber = city.id.toString();
-        return cityNameNormalized.includes(searchInput) || plateNumber.includes(searchInput);
+        return (
+          cityNameNormalized.includes(searchInput) ||
+          plateNumber.includes(searchInput)
+        );
       })
     );
   };
@@ -67,7 +77,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-col min-h-full">
-      <h1 className="text-5xl font-semibold text-center mb-8">Türkiye - İllere Göre Hava Durumu</h1>
+      <h1 className="text-5xl font-semibold text-center mb-8">
+        Türkiye - İllere Göre Hava Durumu
+      </h1>
       <div
         className="sticky top-4 flex p-1 mb-8 bg-gradient-to-br from-color-fourth to-color-fifth rounded-full text-color-tertiary self-center shadow-xl"
         ref={parentRef}
@@ -96,7 +108,9 @@ const Home = () => {
           className={`py-2 px-4 font-semibold text-lg relative duration-100 ${
             activeTab === 'map' ? 'active text-white' : ''
           }`}
-          onClick={(e) => (handleClick(e, 'map'), setSearch(''), setFilteredCities(cities))}
+          onClick={(e) => (
+            handleClick(e, 'map'), setSearch(''), setFilteredCities(cities)
+          )}
         >
           Harita
         </button>
