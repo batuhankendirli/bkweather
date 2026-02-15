@@ -67,7 +67,7 @@ const Home = () => {
           cityNameNormalized.includes(searchInput) ||
           plateNumber.includes(searchInput)
         );
-      })
+      }),
     );
   };
 
@@ -109,7 +109,9 @@ const Home = () => {
             activeTab === 'map' ? 'active text-white' : ''
           }`}
           onClick={(e) => (
-            handleClick(e, 'map'), setSearch(''), setFilteredCities(cities)
+            handleClick(e, 'map'),
+            setSearch(''),
+            setFilteredCities(cities)
           )}
         >
           Harita
