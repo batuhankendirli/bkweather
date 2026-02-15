@@ -6,10 +6,6 @@ import Graph from '@/app/components/Graph';
 import Conditions from '@/app/components/Conditions';
 import CityInfo from '@/app/components/CityInfo';
 
-interface Params {
-  params: { id: number };
-}
-
 type Props = {
   params: Promise<{ id: string }>;
 };
@@ -22,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export default async function CityDetail(props: Params) {
+export default async function CityDetail(props: Props) {
   const { id } = await props.params;
   console.log(id);
   const { latitude, longitude } = cities[Number(id) - 1];
